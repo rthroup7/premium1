@@ -275,8 +275,6 @@ ${prefix}queue => To View The Songs Queue
 ════════════
 ${prefix}join => Join To Room
 ════════════
-${prefix}invite => To Invite The Bot In Your Server
-════════════
 
  `)
    message.author.sendEmbed(embed)
@@ -301,18 +299,7 @@ Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
   }
 });
 
-client.on('message', message => {
-  if(message.content.startsWith(`${prefix}invite`)){
-    var embed = new Discord.RichEmbed()
-    .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
-    .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2080374975")
-    .setTimestamp()
-    .setFooter(`Requested By | ${message.author.username}`)
-    .setColor("RANDOM")
-    message.channel.send(`:white_check_mark: I've DMed you with my invite link`)
-    message.author.send({embed})
-  }
-});
+
  
 client.on('message', msg => {
 
